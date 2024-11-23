@@ -115,43 +115,43 @@ public class Produtos extends Conectar {
         }
     }
 
-    public void alterar() {
-        try {
-            sql = "UPDATE produtos SET nome=?, descricao=?, valor=?";
-            if (tamanho > 0) sql += ", foto=?";
-            sql += " WHERE nome=?";
-            
-            ps = con.prepareStatement(sql);
-            ps.setString(1, nome);
-            ps.setString(2, descricao);
-            ps.setDouble(3, valor);
-            ps.setInt(4, pk_prod);
-            
-            if (tamanho > 0) {
-                ps.setBlob(4, foto, tamanho);
-                ps.setInt(5, pk_prod);
-            } else {
-                ps.setInt(4, pk_prod);
-            }
-            
-            ps.executeUpdate();
-            this.statusSQL = null;
-        } catch (SQLException ex) {
-            this.statusSQL = "Erro ao alterar produto! <br> " + ex.getMessage();
+   public void alterar() {
+    try {
+        sql = "UPDATE produtos SET descricao=?, valor=?";
+        if (tamanho > 0) {
+            sql += ", foto=?";
         }
+        sql += " WHERE nome=?";  // Alterado para usar nome como referência
+        
+        ps = con.prepareStatement(sql);
+        ps.setString(1, descricao);
+        ps.setDouble(2, valor);
+        
+        if (tamanho > 0) {
+            ps.setBlob(3, foto, tamanho);
+            ps.setString(4, nome);
+        } else {
+            ps.setString(3, nome);
+        }
+        
+        ps.executeUpdate();
+        this.statusSQL = null;
+    } catch (SQLException ex) {
+        this.statusSQL = "Erro ao alterar produto! <br> " + ex.getMessage();
     }
+}
 
     public void deletar() {
-        try {
-            sql = "DELETE FROM produtos WHERE nome = ?";
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, pk_prod);
-            ps.executeUpdate();
-            this.statusSQL = null;
-        } catch (SQLException ex) {
-            this.statusSQL = sql + " <br> Erro ao deletar produto! <br> " + ex.getMessage();
-        }
+     try {
+        sql = "DELETE FROM produtos WHERE nome = ?";
+        ps = con.prepareStatement(sql);
+        ps.setString(1, nome);  // Alterado de ps.setInt(1, pk_prod) para ps.setString(1, nome)
+        ps.executeUpdate();
+        this.statusSQL = null;
+    } catch (SQLException ex) {
+        this.statusSQL = sql + " <br> Erro ao deletar produto! <br> " + ex.getMessage();
     }
+}
 
     public void gravar() {
         try {

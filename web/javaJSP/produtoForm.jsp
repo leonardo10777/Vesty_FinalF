@@ -181,7 +181,7 @@
                                 onclick="return confirm('Tem certeza que deseja excluir este produto?')">
                             Excluir
                         </button>
- 
+        <button type="submit" name="alterar" value="alterar" class="btn btn-primary">Alterar</button>
                     
                     <a href="../index.jsp" class="btn btn-secondary">Voltar</a>
                 </div>

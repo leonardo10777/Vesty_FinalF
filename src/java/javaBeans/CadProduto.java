@@ -81,6 +81,15 @@ public class CadProduto extends HttpServlet {
                 }
             }
             
+            if (request.getParameter("alterar") != null) {
+                prod.alterar();
+                if (prod.statusSQL == null) {
+                    statusSQL = "Produto alterado com sucesso!";
+                } else {
+                    statusSQL = prod.statusSQL;
+                }
+            }
+            
             if (request.getParameter("deletar") != null) {
                 prod.deletar();
                 if (prod.statusSQL == null) {
