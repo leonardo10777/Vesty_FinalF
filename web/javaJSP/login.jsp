@@ -20,7 +20,7 @@
         response.sendRedirect("../index.jsp");// carrega a página de sistema
     } else {
        String sHTML="<center>Opa! Login ou Senha não encontrados! Tente Novamente! <br>"
-       + "<a href = '../index.html'> Voltar </a></center>";
+       + "<a href = '../index.jsp'> Voltar </a></center>";
        out.println(sHTML);
     }
  %>

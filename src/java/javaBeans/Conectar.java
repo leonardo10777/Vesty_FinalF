@@ -60,14 +60,15 @@ ps.executeUpdate(); // Executa o comando SQL dentro do servidor
             ps = con.prepareStatement(sql);
             ps.executeUpdate(); // Executa o comando SQL dentro do servidor 
             
-       sql = "create table if not exists produtos ( pk_prod int AUTO_INCREMENT,"
-                    + "descricao varchar(40) not null,"
-                    + "foto longblob,"
-                    + "valor double not null,"
-                    + "nome varchar(20) not null,"
-                    + "PRIMARY KEY ( pk_prod ) ) ";
+       sql = "create table if not exists produtos ("
+        + "pk_prod int AUTO_INCREMENT,"
+        + "nome varchar(50) not null,"        // aumentei para 50 e coloquei primeiro
+        + "descricao varchar(255) not null,"  // aumentei para 255 para descrições maiores
+        + "valor double not null,"
+        + "foto longblob,"
+        + "PRIMARY KEY (pk_prod))";
             ps = con.prepareStatement(sql);
-            ps.executeUpdate(); // Executa o comando SQL dentro do servidor 
+            ps.executeUpdate(); // Executa o comando SQL dentro do servidor  
        
  
                

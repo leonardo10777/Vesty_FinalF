@@ -17,11 +17,11 @@
         if (user.buscarEmail()) {
             user.alterar();
             sHTML = "<center>Usuário Alterado com Sucesso!<br>"
-                    + "<a href = '../index.html'> Voltar </a></center>";
+                    + "<a href = '../index.jsp'> Voltar </a></center>";
         } else {
             user.incluir();
             sHTML = "<center>Usuário incluido com Sucesso!<br>"
-                    + "<a href = '../index.html'> Voltar </a></center>";
+                    + "<a href = '../index.jsp'> Voltar </a></center>";
         }
     }
     if (!(user.statusSQL == null))

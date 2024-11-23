@@ -81,7 +81,7 @@
             %>
            
                 <div class="col-4">
-    <a href="paginaproduto.jsp?id=<%= produto.getPkProd() %>">
+    <a href="paginaproduto?id=<%= produto.getPkProd() %>">
         <% if (produto.getImagemBase64() != null && !produto.getImagemBase64().isEmpty()) { %>
             <img src="data:image/jpeg;base64,<%= produto.getImagemBase64() %>" 
                  alt="<%= produto.getNome() %>" 
@@ -120,7 +120,6 @@
             <span>3</span>
             <span>4</span>
             <span>&#8594;</span>
-            <button onclick="window.location.href='javaJSP/produtosForm.jsp'" class="btn">Cadastrar</button>
         </div>
     </div>
 
