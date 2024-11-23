@@ -49,7 +49,7 @@
                                 if (s_nivel.equalsIgnoreCase("Master")) {
 
                                     out.print("<li><a href='javaJSP/produtoForm.jsp'> Estoque </a></li>");
-
+                                    out.print("<li><a href='produtos.jsp'> Produtos </a></li>");
                                 } else {
                                     out.print("<li><a href='produtos.jsp'>produtos</a></li>");
                                 }

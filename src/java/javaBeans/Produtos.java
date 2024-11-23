@@ -119,7 +119,7 @@ public class Produtos extends Conectar {
         try {
             sql = "UPDATE produtos SET nome=?, descricao=?, valor=?";
             if (tamanho > 0) sql += ", foto=?";
-            sql += " WHERE pk_prod=?";
+            sql += " WHERE nome=?";
             
             ps = con.prepareStatement(sql);
             ps.setString(1, nome);
@@ -143,7 +143,7 @@ public class Produtos extends Conectar {
 
     public void deletar() {
         try {
-            sql = "DELETE FROM produtos WHERE pk_prod = ?";
+            sql = "DELETE FROM produtos WHERE nome = ?";
             ps = con.prepareStatement(sql);
             ps.setInt(1, pk_prod);
             ps.executeUpdate();

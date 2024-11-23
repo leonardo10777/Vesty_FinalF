@@ -176,12 +176,12 @@
                 <div class="buttons">
                     <button type="submit" name="gravar" value="gravar" class="btn btn-primary">Salvar</button>
                     
-                    <% if (pk_prod != null && !pk_prod.isEmpty()) { %>
+       
                         <button type="submit" name="deletar" value="deletar" class="btn btn-danger" 
                                 onclick="return confirm('Tem certeza que deseja excluir este produto?')">
                             Excluir
                         </button>
-                    <% } %>
+ 
                     
                     <a href="../index.jsp" class="btn btn-secondary">Voltar</a>
                 </div>
